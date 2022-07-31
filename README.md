@@ -4,6 +4,7 @@
 - Top Bar with Section
 - Real Time Graph
 - Table for Transactions
+- Dynamic Order Sheet
 
 ## Improvements
 
