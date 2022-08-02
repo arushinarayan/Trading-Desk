@@ -1,3 +1,9 @@
+# Trading Desk (React) Coding Assessment
+
+## Overview
+
+To do this assessment, these [instructions](https://github.com/gurukishore111/VIT-assessment-2) were followed.
+
 ## Application Functionalities
 
 - Side Bar with Icons
