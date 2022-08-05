@@ -12,8 +12,10 @@ const tableData = [
  
 ]
 
+
 function App() {    
-  const [data, setData] = useState("");
+  const [dataAsks, setDataAsks] = useState([]);
+  const [dataBids, setDataBids] = useState([]);
 
   const subscription = { topic: "subscribe", to: "btcusdt" };
   useEffect(() => {
@@ -27,7 +29,8 @@ function App() {
     ws.onmessage = (event) => {
       const response = JSON.parse(event.data);
       console.log(response.btcusdt.asks);
-      setData(response.btcusdt.asks);
+      setDataAsks(response.btcusdt.asks);
+      setDataBids(response.btcusdt.bids);
       //ws.close();
     };
     ws.onclose = () => {
@@ -51,7 +54,7 @@ function App() {
   <div style={{ paddingLeft:100, display: "flex"}}>
     <div style={{width: 700, height:'100%'}}>
       <TradingViewWidget
-        symbol="NASDAQ:AAPL"
+        symbol="BTCUSDT"
         theme={Themes.DARK}
         width="700"
         height="400"
@@ -79,8 +82,8 @@ function App() {
               <td>{val.time}</td>
               <td>{val.price}</td>
               <td>{val.amount}</td>
-              <td style={{color:'green'}}>{val.side}</td>
-              <td style={{color:'red'}}>{val.status}</td>
+              <td style={{color:'#00d956'}}>{val.side}</td>
+              <td style={{color:'#ec6052'}}>{val.status}</td>
             </tr>
           )
         })}
@@ -95,20 +98,41 @@ function App() {
         </div>
         <table>
         <tr style={{borderBottom:'none'}}>
-          <th>Amount (BTC)</th>
-          <th>Price (USDC)</th>
+          <th style={{borderBottom:'none', paddingRight:40, paddingLeft:20}}>Amount (BTC)</th>
+          <th style={{borderBottom:'none'}}>Price (USDC)</th>
         </tr>
-        <tr style={{borderBottom:'none'}}>
-          <td style={{borderBottom:'none'}}>{data}</td>
-        </tr>
+        {dataAsks.slice(1, dataAsks.length).map((items, index) => {
+          return (
+            <tr>
+             <td style={{borderBottom:'none', backgroundColor:'#663535', color:'#ec6052'}}>{items[0]}</td>
+             <td style={{borderBottom:'none'}}>{items[1]}</td>
+            </tr>
+          )
+        })}
+         <div style={{border: '1px solid gray', color:'#00d956', textAlign:'center', justifyContent:'center', padding:10, width:'180%'}}><txt style={{ color:'#00d956', fontSize:20}}>23,935.32 USDC</txt></div>
+         {dataBids.slice(1, dataBids.length).map((items, index) => {
+          return (
+            <tr>
+             <td style={{borderBottom:'none', backgroundColor:'#1d514d', color:'#00ab94'}}>{items[0]}</td>
+             <td style={{borderBottom:'none'}}>{items[1]}</td>
+            </tr>
+          )
+        })}
       </table>
         </div>
     </div>
-    <div style={{width: '25%', height:800, backgroundColor:'#333333',border: '1px solid gray'}}>
-  <div >
-      <div style={{display:'flex', height:50, border: '1px solid gray'}}>
-          <div style={{borderRadius: 10, color:'green', backgroundColor:'#191B21', marginLeft:20, height:25, width:100, marginTop:15, textAlign:'center'}}>Buy</div>
-          <div style={{borderRadius: 10, color:'red', marginLeft:50, height:25, width:100, marginTop:18, textAlign:'center'}}>Sell</div>
+    <div style={{width: '25%', backgroundColor:'#242530',border: '1px solid gray'}}>
+  <div>
+      <div style={{display:'flex', height:50, border: '1px solid gray', height:'100%', paddingBottom:8}}>
+          <div style={{borderRadius: 10, color:'#00d956', backgroundColor:'#191B21', marginLeft:20, height:25, width:100, marginTop:15, textAlign:'center', marginLeft:50}}>Buy</div>
+          <div style={{borderRadius: 10, color:'#ec6052', marginLeft:50, height:25, width:100, marginTop:18, textAlign:'center'}}>Sell</div>
+        </div>
+        </div>
+        <div style={{display: 'flex', paddingLeft: 20, paddingRight: 20, marginTop:30}}>
+        <div style={{display: 'block', backgroundColor:'#25473b', borderRadius:20, padding:'10px 60px 10px 60px', marginLeft:10}}>
+        <h5 style={{color: 'gray', lineHeight: 0, fontSize:12, paddingTop:10}}>AVAILABLE BALANCE</h5>
+        <h5 style={{color: 'white', lineHeight: 0, fontSize:15, }}>0.1407 BTC</h5>
+        <h5 style={{color: 'white', lineHeight: 0, fontSize:15, }}>1234.54 BTC</h5>
         </div>
         </div>
         </div>
