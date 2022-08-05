@@ -25,7 +25,7 @@ const Navbar = () => {
         <div style={{display: 'flex', paddingLeft: 20, paddingRight: 20}}>
         <div style={{display: 'block'}}>
         <h5 style={{color: 'gray', lineHeight: 0, fontSize:12, paddingTop:10}}>Last Price</h5>
-        <h5 style={{color: 'green', lineHeight: 0, fontSize:20, }}>23,935.32 USDC</h5>
+        <h5 style={{color: '#00d956', lineHeight: 0, fontSize:20, }}>23,935.32 USDC</h5>
         </div>
         <div style= {{borderLeft: '1px solid gray', height: '100px', marginLeft:10}}></div>
         </div>
@@ -35,8 +35,8 @@ const Navbar = () => {
         <div style={{display: 'block'}}>
         <h5 style={{color: 'gray', lineHeight: 0, fontSize:12, paddingTop:10}}>24h Change</h5>
         <div style={{display:'flex'}}>
-        <Arrow style={{color: 'green',paddingTop:12, fontSize:25, }}></Arrow>
-        <h5 style={{color: 'green', lineHeight: 0, fontSize:15, paddingTop:0 }}>+0.00%</h5>
+        <Arrow style={{color: '#00d956',paddingTop:12, fontSize:25, }}></Arrow>
+        <h5 style={{color: '#00d956', lineHeight: 0, fontSize:15, paddingTop:0 }}>+0.00%</h5>
         </div>
         </div>
         <div style= {{borderLeft: '1px solid gray', height: '100px', marginLeft:50,}}></div>
