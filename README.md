@@ -28,7 +28,7 @@ With more time, the Formatting of Dynamic View of the Order Book could have been
 - `npm start` - To start the react app
 
 ## Screenshots of the project
-<img width="1512"  src="./src/images/Screenshot.png">
+<img width="1512"  src="./src/images/screenshot.png">
 
 ## Conclusion
 
