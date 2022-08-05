@@ -14,11 +14,11 @@ To do this assessment, these [instructions](https://github.com/gurukishore111/VI
 
 ## Improvements
 
-Currently the project does not have the bids section in the order book and the formatting for the asks in not complete. BUY/SELL Column is incomplete along with some minor UI/UX issues.
+Currently the project's BUY/SELL Column is incomplete along with some minor UI/UX issues. In addition to this, the website is not responsive.
 
 ## What could have been different with more time
 
-With more time, the Formatting of Dynamic View of the Order Book could have been done as the BUY/SELL Column both of which are incomplete as of now.
+With more time, all the components of the BUY/SELL Column could have been completed, the website could have been made responsive and the minor UI/UX issues could have been fixed.
 
 ## Setup
 
@@ -32,6 +32,5 @@ With more time, the Formatting of Dynamic View of the Order Book could have been
 
 ## Conclusion
 
-While this isn't the best work I've done, I enjoyed working on this project and am looking forward to any and all feedback! Thank You for the Opportunity
-
+While this isn't the best work I've done, I enjoyed working on this project!
 ---
